@@ -1,0 +1,16 @@
+asgiref==3.10.0
+cffi==2.0.0
+cryptography==46.0.3
+Django==5.2.7
+django-environ==0.12.0
+fpdf==1.7.2
+numpy==2.3.4
+oracledb==3.2.0
+pandas==2.3.3
+pillow==12.0.0
+pycparser==2.23
+python-dateutil==2.9.0.post0
+pytz==2025.2
+six==1.17.0
+sqlparse==0.5.3
+tzdata==2025.2

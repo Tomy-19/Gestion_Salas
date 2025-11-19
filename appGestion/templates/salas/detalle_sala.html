@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle sala{% endblock title %}
+
+{% block main %}
+<div class="container mt-4">
+  <h1>{{ sala.nombre }}</h1>
+  <p><strong>Capacidad:</strong> {{ sala.capacidad_maxima }}</p>
+  <p><strong>Habilitada:</strong> {{ sala.habilitada|yesno:"Sí,No" }}</p>
+
+  {% if reserva_activa %}
+    <h3>Reserva en curso</h3>
+    <p><strong>Inicio:</strong> {{ reserva_activa.fecha_inicio }}</p>
+    <p><strong>Término:</strong> {{ reserva_activa.fecha_termino }}</p>
+
+  {% else %}
+    <p>La sala está disponible.</p>
+    {% if sala.habilitada %}
+      <a href="{% url 'reservar_sala' sala.pk %}" class="btn btn-success me-2">
+        Reservar esta sala
+      </a>
+    {% endif %}
+  {% endif %}
+
+  <a href="{% url 'main' %}" class="btn btn-secondary me-2">
+    Volver al inicio
+  </a>
+</div>
+{% endblock main %}

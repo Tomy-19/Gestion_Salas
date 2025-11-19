@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva reserva{% endblock title %}
+
+{% block main %}
+<div class="container mt-4">
+  <h1>Reservar sala: {{ sala.nombre }}</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Reservar</button>
+    <a href="{% url 'detalle_sala' sala.pk %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock main %}
